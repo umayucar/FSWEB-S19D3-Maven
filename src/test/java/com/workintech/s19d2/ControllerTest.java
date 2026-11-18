@@ -10,13 +10,11 @@ import com.workintech.s19d2.entity.Account;
 import com.workintech.s19d2.entity.Member;
 import com.workintech.s19d2.service.AccountService;
 import com.workintech.s19d2.service.AuthenticationService;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
@@ -123,7 +121,7 @@ class ControllerTest {
     void accessPermittedEndpointsWithoutAuthentication() throws Exception {
         RegistrationMember registrationMember = new RegistrationMember("test@example.com", "password123");
         Member member = new Member();
-        member.setId(1l);
+        member.setId(1L);
         member.setEmail("test@example.com");
         member.setPassword("password123");
 
